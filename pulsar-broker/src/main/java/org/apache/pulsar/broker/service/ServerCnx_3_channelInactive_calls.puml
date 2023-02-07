@@ -1,0 +1,382 @@
+@startuml
+
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "org.apache.pulsar.broker.service.ServerCnx#channelInactive(ChannelHandlerContext)",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
+    "showPackageLevels": 2,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "org.apache.pulsar.broker.service.ServerCnx",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1411517106 { 
+   	label=apache
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_523310109 { 
+   	label=pulsar
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   subgraph cluster_1046280548 { 
+   	label=ClientCnx
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ClientCnx12001400XXXchannelInactive604153544[
+	label="+ channelInactive()"
+	style=filled
+	fillcolor=white
+	tooltip="ClientCnx
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1224357303 { 
+   	label=Consumer
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Consumer1718290011XXXclose0[
+	label="+ close()"
+	style=filled
+	fillcolor=white
+	tooltip="Consumer
+
+&#10;  Close the consumer if: a. the connection is dropped b. connection is open (graceful close) and there are no&#10;  pending message acks&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1263077722 { 
+   	label=DefaultConnectionController
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   DefaultConnectionController1434559213XXXdecreaseConnection159223009[
+	label="+ decreaseConnection()"
+	style=filled
+	fillcolor=white
+	tooltip="DefaultConnectionController
+
+&#10;  Decrease the number of connections counter.&#10;  @param remoteAddress&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_144653824 { 
+   	label=BrokerInterceptorDisabled
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   BrokerInterceptorDisabled1593963802XXXonConnectionClosed1806503690[
+	label="+ onConnectionClosed()"
+	style=filled
+	fillcolor=white
+	tooltip="BrokerInterceptorDisabled
+
+&#10;  Called by the broker while connection closed.&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1562185888 { 
+   	label=ConnectionPool
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ConnectionPool12001400XXXclose0[
+	label="+ close()"
+	style=filled
+	fillcolor=white
+	tooltip="ConnectionPool
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1660348955 { 
+   	label=Producer
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Producer1718290011XXXcloseNow64711720[
+	label="+ closeNow()"
+	style=filled
+	fillcolor=white
+	tooltip="Producer
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1784639295 { 
+   	label=BrokerInterceptorWithClassLoader
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   BrokerInterceptorWithClassLoader1588982040XXXonConnectionClosed1806503690[
+	label="+ onConnectionClosed()"
+	style=filled
+	fillcolor=white
+	tooltip="BrokerInterceptorWithClassLoader
+
+&#10;  Called by the broker while connection closed.&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1859364881 { 
+   	label=PulsarStats
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PulsarStats1718290011XXXrecordConnectionClose0[
+	label="+ recordConnectionClose()"
+	style=filled
+	fillcolor=white
+	tooltip="PulsarStats
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1864234657 { 
+   	label=PulsarHandler
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PulsarHandler1070348832XXXcancelKeepAliveTask0[
+	label="+ cancelKeepAliveTask()"
+	style=filled
+	fillcolor=white
+	tooltip="PulsarHandler
+
+null"
+	fontcolor=darkgreen
+];
+
+PulsarHandler1070348832XXXchannelInactive604153544[
+	label="+ channelInactive()"
+	style=filled
+	fillcolor=white
+	tooltip="PulsarHandler
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_2021095034 { 
+   	label=ConnectionHandler
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ConnectionHandler12001400XXXconnectionClosed99851650[
+	label="+ connectionClosed()"
+	style=filled
+	fillcolor=white
+	tooltip="ConnectionHandler
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_2126729805 { 
+   	label=BrokerInterceptors
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   BrokerInterceptors1588982040XXXonConnectionClosed1806503690[
+	label="+ onConnectionClosed()"
+	style=filled
+	fillcolor=white
+	tooltip="BrokerInterceptors
+
+&#10;  Called by the broker while connection closed.&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_330549314 { 
+   	label=ConcurrentLongHashMap
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ConcurrentLongHashMap201476337XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="ConcurrentLongHashMap
+
+null"
+	fontcolor=darkgreen
+];
+
+ConcurrentLongHashMap201476337XXXforEach873463684[
+	label="+ forEach()"
+	style=filled
+	fillcolor=white
+	tooltip="ConcurrentLongHashMap
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_923169591 { 
+   	label=ServerCnx
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ServerCnx1718290011XXXchannelInactive604153544[
+	label="+ channelInactive()"
+	style=filled
+	fillcolor=white
+	tooltip="ServerCnx
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_961973220 { 
+   	label=ProxyConnection
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ProxyConnection79518146XXXchannelInactive604153544[
+	label="+ channelInactive()"
+	style=filled
+	fillcolor=white
+	tooltip="ProxyConnection
+
+null"
+	fontcolor=darkgreen
+];
+} 
+} 
+} 
+
+'edges    
+ClientCnx12001400XXXchannelInactive604153544 -> ConcurrentLongHashMap201476337XXXclear0;
+ClientCnx12001400XXXchannelInactive604153544 -> ConcurrentLongHashMap201476337XXXforEach873463684;
+ClientCnx12001400XXXchannelInactive604153544 -> ConnectionHandler12001400XXXconnectionClosed99851650;
+ClientCnx12001400XXXchannelInactive604153544 -> PulsarHandler1070348832XXXchannelInactive604153544;
+ProxyConnection79518146XXXchannelInactive604153544 -> ConnectionPool12001400XXXclose0;
+ProxyConnection79518146XXXchannelInactive604153544 -> PulsarHandler1070348832XXXchannelInactive604153544;
+PulsarHandler1070348832XXXchannelInactive604153544 -> ClientCnx12001400XXXchannelInactive604153544;
+PulsarHandler1070348832XXXchannelInactive604153544 -> ProxyConnection79518146XXXchannelInactive604153544;
+PulsarHandler1070348832XXXchannelInactive604153544 -> PulsarHandler1070348832XXXcancelKeepAliveTask0;
+PulsarHandler1070348832XXXchannelInactive604153544 -> ServerCnx1718290011XXXchannelInactive604153544;
+ServerCnx1718290011XXXchannelInactive604153544 -> BrokerInterceptorDisabled1593963802XXXonConnectionClosed1806503690;
+ServerCnx1718290011XXXchannelInactive604153544 -> BrokerInterceptorWithClassLoader1588982040XXXonConnectionClosed1806503690;
+ServerCnx1718290011XXXchannelInactive604153544 -> BrokerInterceptors1588982040XXXonConnectionClosed1806503690;
+ServerCnx1718290011XXXchannelInactive604153544 -> ConcurrentLongHashMap201476337XXXforEach873463684;
+ServerCnx1718290011XXXchannelInactive604153544 -> Consumer1718290011XXXclose0;
+ServerCnx1718290011XXXchannelInactive604153544 -> DefaultConnectionController1434559213XXXdecreaseConnection159223009;
+ServerCnx1718290011XXXchannelInactive604153544 -> Producer1718290011XXXcloseNow64711720;
+ServerCnx1718290011XXXchannelInactive604153544 -> PulsarHandler1070348832XXXchannelInactive604153544;
+ServerCnx1718290011XXXchannelInactive604153544 -> PulsarStats1718290011XXXrecordConnectionClose0;
+    
+}
+@enduml

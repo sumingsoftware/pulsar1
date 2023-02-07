@@ -1,0 +1,395 @@
+@startuml
+
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "org.apache.pulsar.broker.service.ServerCnx#removedConsumer(Consumer)",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
+    "showPackageLevels": 2,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "org.apache.pulsar.broker.service.ServerCnx",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1411517106 { 
+   	label=apache
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_523310109 { 
+   	label=pulsar
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   subgraph cluster_1014604199 { 
+   	label=PulsarDecoder
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PulsarDecoder1070348832XXXchannelRead995363995[
+	label="+ channelRead()"
+	style=filled
+	fillcolor=white
+	tooltip="PulsarDecoder
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1224357303 { 
+   	label=Consumer
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Consumer1718290011XXXclose0[
+	label="+ close()"
+	style=filled
+	fillcolor=white
+	tooltip="Consumer
+
+&#10;  Close the consumer if: a. the connection is dropped b. connection is open (graceful close) and there are no&#10;  pending message acks&#10; "
+	fontcolor=darkgreen
+];
+
+Consumer1718290011XXXclose64711720[
+	label="+ close()"
+	style=filled
+	fillcolor=white
+	tooltip="Consumer
+
+null"
+	fontcolor=darkgreen
+];
+
+Consumer1718290011XXXconsumerId0[
+	label="+ consumerId()"
+	style=filled
+	fillcolor=white
+	tooltip="Consumer
+
+null"
+	fontcolor=darkgreen
+];
+
+Consumer1718290011XXXdisconnect0[
+	label="+ disconnect()"
+	style=filled
+	fillcolor=white
+	tooltip="Consumer
+
+null"
+	fontcolor=darkgreen
+];
+
+Consumer1718290011XXXdisconnect64711720[
+	label="+ disconnect()"
+	style=filled
+	fillcolor=white
+	tooltip="Consumer
+
+null"
+	fontcolor=darkgreen
+];
+
+Consumer1718290011XXXdoUnsubscribe3327612[
+	label="+ doUnsubscribe()"
+	style=filled
+	fillcolor=white
+	tooltip="Consumer
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1348467880 { 
+   	label=NonPersistentTopic
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   NonPersistentTopic442146095XXXsubscribe2062160637[
+	label="+ subscribe()"
+	style=filled
+	fillcolor=white
+	tooltip="NonPersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+NonPersistentTopic442146095XXXsubscribe8945646[
+	label="+ subscribe()"
+	style=filled
+	fillcolor=white
+	tooltip="NonPersistentTopic
+
+&#10;  Subscribe a topic.&#10;  @param option&#10;  @return&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1461223300 { 
+   	label=NonPersistentSubscription
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   NonPersistentSubscription442146095XXXdoUnsubscribe503125994[
+	label="+ doUnsubscribe()"
+	style=filled
+	fillcolor=white
+	tooltip="NonPersistentSubscription
+
+&#10;  Handle unsubscribe command from the client API Check with the dispatcher is this consumer can proceed with&#10;  unsubscribe.&#10; &#10;  @param consumer consumer object that is initiating the unsubscribe operation&#10;  @return CompletableFuture indicating the completion of ubsubscribe operation&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1716924171 { 
+   	label=PersistentDispatcherMultipleConsumers
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PersistentDispatcherMultipleConsumers1101090806XXXdisconnectAllConsumers64711720[
+	label="+ disconnectAllConsumers()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentDispatcherMultipleConsumers
+
+&#10;  disconnect all consumers.&#10; &#10;  @return&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_2022822952 { 
+   	label=PersistentSubscription
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PersistentSubscription1101090806XXXdoUnsubscribe503125994[
+	label="+ doUnsubscribe()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentSubscription
+
+&#10;  Handle unsubscribe command from the client API Check with the dispatcher is this consumer can proceed with&#10;  unsubscribe.&#10; &#10;  @param consumer consumer object that is initiating the unsubscribe operation&#10;  @return CompletableFuture indicating the completion of unsubscribe operation&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_330549314 { 
+   	label=ConcurrentLongHashMap
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ConcurrentLongHashMap201476337XXXget3327612[
+	label="+ get()"
+	style=filled
+	fillcolor=white
+	tooltip="ConcurrentLongHashMap
+
+null"
+	fontcolor=darkgreen
+];
+
+ConcurrentLongHashMap201476337XXXremove1897085007[
+	label="+ remove()"
+	style=filled
+	fillcolor=white
+	tooltip="ConcurrentLongHashMap
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_359057108 { 
+   	label=PersistentTopic
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PersistentTopic1101090806XXXsubscribe2062160637[
+	label="+ subscribe()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXsubscribe8945646[
+	label="+ subscribe()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+&#10;  Subscribe a topic.&#10;  @param option&#10;  @return&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_923169591 { 
+   	label=ServerCnx
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ServerCnx1718290011XXXchannelInactive604153544[
+	label="+ channelInactive()"
+	style=filled
+	fillcolor=white
+	tooltip="ServerCnx
+
+null"
+	fontcolor=darkgreen
+];
+
+ServerCnx1718290011XXXremovedConsumer503125994[
+	label="+ removedConsumer()"
+	style=filled
+	fillcolor=white
+	tooltip="ServerCnx
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_939167584 { 
+   	label=AbstractDispatcherSingleActiveConsumer
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   AbstractDispatcherSingleActiveConsumer1718290011XXXdisconnectActiveConsumers64711720[
+	label="+ disconnectActiveConsumers()"
+	style=filled
+	fillcolor=white
+	tooltip="AbstractDispatcherSingleActiveConsumer
+
+&#10;  Disconnect active consumers.&#10; "
+	fontcolor=darkgreen
+];
+
+AbstractDispatcherSingleActiveConsumer1718290011XXXdisconnectAllConsumers64711720[
+	label="+ disconnectAllConsumers()"
+	style=filled
+	fillcolor=white
+	tooltip="AbstractDispatcherSingleActiveConsumer
+
+&#10;  Disconnect all consumers on this dispatcher (server side close). This triggers channelInactive on the inbound&#10;  handler which calls dispatcher.removeConsumer(), where the closeFuture is completed&#10; &#10;  @return&#10; "
+	fontcolor=darkgreen
+];
+} 
+} 
+} 
+
+'edges    
+AbstractDispatcherSingleActiveConsumer1718290011XXXdisconnectActiveConsumers64711720 -> Consumer1718290011XXXdisconnect64711720;
+AbstractDispatcherSingleActiveConsumer1718290011XXXdisconnectAllConsumers64711720 -> Consumer1718290011XXXdisconnect64711720;
+Consumer1718290011XXXclose0 -> Consumer1718290011XXXclose64711720;
+Consumer1718290011XXXclose64711720 -> ServerCnx1718290011XXXremovedConsumer503125994;
+Consumer1718290011XXXdisconnect0 -> Consumer1718290011XXXdisconnect64711720;
+Consumer1718290011XXXdisconnect64711720 -> Consumer1718290011XXXclose64711720;
+Consumer1718290011XXXdoUnsubscribe3327612 -> ServerCnx1718290011XXXremovedConsumer503125994;
+NonPersistentSubscription442146095XXXdoUnsubscribe503125994 -> Consumer1718290011XXXclose0;
+NonPersistentTopic442146095XXXsubscribe2062160637 -> Consumer1718290011XXXclose0;
+NonPersistentTopic442146095XXXsubscribe8945646 -> Consumer1718290011XXXclose0;
+PersistentDispatcherMultipleConsumers1101090806XXXdisconnectAllConsumers64711720 -> Consumer1718290011XXXdisconnect64711720;
+PersistentSubscription1101090806XXXdoUnsubscribe503125994 -> Consumer1718290011XXXclose0;
+PersistentTopic1101090806XXXsubscribe2062160637 -> Consumer1718290011XXXclose0;
+PersistentTopic1101090806XXXsubscribe8945646 -> Consumer1718290011XXXclose0;
+PulsarDecoder1070348832XXXchannelRead995363995 -> Consumer1718290011XXXclose0;
+PulsarDecoder1070348832XXXchannelRead995363995 -> Consumer1718290011XXXdoUnsubscribe3327612;
+ServerCnx1718290011XXXchannelInactive604153544 -> Consumer1718290011XXXclose0;
+ServerCnx1718290011XXXremovedConsumer503125994 -> ConcurrentLongHashMap201476337XXXget3327612;
+ServerCnx1718290011XXXremovedConsumer503125994 -> ConcurrentLongHashMap201476337XXXremove1897085007;
+ServerCnx1718290011XXXremovedConsumer503125994 -> Consumer1718290011XXXconsumerId0;
+    
+}
+@enduml

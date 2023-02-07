@@ -1,0 +1,484 @@
+@startuml
+
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "org.apache.pulsar.broker.service.ServerCnx#removedProducer(Producer)",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
+    "showPackageLevels": 2,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "org.apache.pulsar.broker.service.ServerCnx",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1411517106 { 
+   	label=apache
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_523310109 { 
+   	label=pulsar
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   subgraph cluster_1014604199 { 
+   	label=PulsarDecoder
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PulsarDecoder1070348832XXXchannelRead995363995[
+	label="+ channelRead()"
+	style=filled
+	fillcolor=white
+	tooltip="PulsarDecoder
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1301977158 { 
+   	label=AbstractTopic
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   AbstractTopic1718290011XXXaddProducer1295200911[
+	label="+ addProducer()"
+	style=filled
+	fillcolor=white
+	tooltip="AbstractTopic
+
+&#10;  Tries to add a producer to the topic. Several validations will be performed.&#10; &#10;  @param producer&#10;  @param producerQueuedFuture&#10; a future that will be triggered if the producer is being queued up prior of getting established&#10;  @return the \"topic epoch\" if there is one or empty&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1348467880 { 
+   	label=NonPersistentTopic
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   NonPersistentTopic442146095XXXcheckGC0[
+	label="+ checkGC()"
+	style=filled
+	fillcolor=white
+	tooltip="NonPersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+NonPersistentTopic442146095XXXclose64711720[
+	label="+ close()"
+	style=filled
+	fillcolor=white
+	tooltip="NonPersistentTopic
+
+&#10;  Close this topic - close all producers and subscriptions associated with this topic.&#10; &#10;  @param closeWithoutWaitingClientDisconnect don't wait for client disconnect and forcefully close managed-ledger&#10;  @return Completable future indicating completion of close operation&#10; "
+	fontcolor=darkgreen
+];
+
+NonPersistentTopic442146095XXXdelete0[
+	label="+ delete()"
+	style=filled
+	fillcolor=white
+	tooltip="NonPersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+NonPersistentTopic442146095XXXdeleteForcefully0[
+	label="+ deleteForcefully()"
+	style=filled
+	fillcolor=white
+	tooltip="NonPersistentTopic
+
+&#10;  Forcefully close all producers/consumers/replicators and deletes the topic.&#10; &#10;  @return&#10; "
+	fontcolor=darkgreen
+];
+
+NonPersistentTopic442146095XXXpublishMessage991694241[
+	label="+ publishMessage()"
+	style=filled
+	fillcolor=white
+	tooltip="NonPersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1660348955 { 
+   	label=Producer
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Producer1718290011XXXcheckEncryption0[
+	label="+ checkEncryption()"
+	style=filled
+	fillcolor=white
+	tooltip="Producer
+
+null"
+	fontcolor=darkgreen
+];
+
+Producer1718290011XXXcheckPermissionsAsync0[
+	label="+ checkPermissionsAsync()"
+	style=filled
+	fillcolor=white
+	tooltip="Producer
+
+null"
+	fontcolor=darkgreen
+];
+
+Producer1718290011XXXclose64711720[
+	label="+ close()"
+	style=filled
+	fillcolor=white
+	tooltip="Producer
+
+&#10;  Close the producer immediately if: a. the connection is dropped b. it's a graceful close and no pending publish&#10;  acks are left else wait for pending publish acks&#10; &#10;  @return completable future indicate completion of close&#10; "
+	fontcolor=darkgreen
+];
+
+Producer1718290011XXXcloseNow64711720[
+	label="+ closeNow()"
+	style=filled
+	fillcolor=white
+	tooltip="Producer
+
+null"
+	fontcolor=darkgreen
+];
+
+Producer1718290011XXXdisconnect0[
+	label="+ disconnect()"
+	style=filled
+	fillcolor=white
+	tooltip="Producer
+
+&#10;  It closes the producer from server-side and sends command to client to disconnect producer from existing&#10;  connection without closing that connection.&#10; &#10;  @return Completable future indicating completion of producer close&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1864234657 { 
+   	label=PulsarHandler
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PulsarHandler1070348832XXXchannelInactive604153544[
+	label="+ channelInactive()"
+	style=filled
+	fillcolor=white
+	tooltip="PulsarHandler
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1975659038 { 
+   	label=MessagePublishContext
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   MessagePublishContext1660348955XXXcompleted1453117839[
+	label="+ completed()"
+	style=filled
+	fillcolor=white
+	tooltip="MessagePublishContext
+
+&#10;  Executed from managed ledger thread when the message is persisted.&#10; "
+	fontcolor=darkgreen
+];
+
+MessagePublishContext1660348955XXXrun0[
+	label="+ run()"
+	style=filled
+	fillcolor=white
+	tooltip="MessagePublishContext
+
+&#10;  Executed from I/O thread when sending receipt back to client.&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_330549314 { 
+   	label=ConcurrentLongHashMap
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ConcurrentLongHashMap201476337XXXget3327612[
+	label="+ get()"
+	style=filled
+	fillcolor=white
+	tooltip="ConcurrentLongHashMap
+
+null"
+	fontcolor=darkgreen
+];
+
+ConcurrentLongHashMap201476337XXXremove1897085007[
+	label="+ remove()"
+	style=filled
+	fillcolor=white
+	tooltip="ConcurrentLongHashMap
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_359057108 { 
+   	label=PersistentTopic
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PersistentTopic1101090806XXXaddComplete1491430175[
+	label="+ addComplete()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXaddFailed715383354[
+	label="+ addFailed()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXcheckGC0[
+	label="+ checkGC()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXclose64711720[
+	label="+ close()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+&#10;  Close this topic - close all producers and subscriptions associated with this topic.&#10; &#10;  @param closeWithoutWaitingClientDisconnect don't wait for client disconnect and forcefully close managed-ledger&#10;  @return Completable future indicating completion of close operation&#10; "
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXdelete0[
+	label="+ delete()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+&#10;  Delete the managed ledger associated with this topic.&#10; &#10;  @return Completable future indicating completion of delete operation Completed exceptionally with:&#10;  IllegalStateException if topic is still active ManagedLedgerException if ledger delete operation fails&#10; "
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXdeleteForcefully0[
+	label="+ deleteForcefully()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+&#10;  Forcefully close all producers/consumers/replicators and deletes the topic. this function is used when local&#10;  cluster is removed from global-namespace replication list. Because broker doesn't allow lookup if local cluster&#10;  is not part of replication cluster list.&#10; &#10;  @return&#10; "
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXpublishMessage991694241[
+	label="+ publishMessage()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXpublishTxnMessage483951322[
+	label="+ publishTxnMessage()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+&#10;  Publish Transaction message to this Topic's TransactionBuffer.&#10; &#10;  @param txnID Transaction Id&#10;  @param headersAndPayload Message data&#10;  @param publishContextPublish context&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_56109951 { 
+   	label=BacklogQuotaManager
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   BacklogQuotaManager1718290011XXXhandleExceededBacklogQuota1796186035[
+	label="+ handleExceededBacklogQuota()"
+	style=filled
+	fillcolor=white
+	tooltip="BacklogQuotaManager
+
+&#10;  Handle exceeded size backlog by using policies set in the zookeeper for given topic.&#10; &#10;  @param persistentTopic Topic on which backlog has been exceeded&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_923169591 { 
+   	label=ServerCnx
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ServerCnx1718290011XXXchannelInactive604153544[
+	label="+ channelInactive()"
+	style=filled
+	fillcolor=white
+	tooltip="ServerCnx
+
+null"
+	fontcolor=darkgreen
+];
+
+ServerCnx1718290011XXXremovedProducer939117646[
+	label="+ removedProducer()"
+	style=filled
+	fillcolor=white
+	tooltip="ServerCnx
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+} 
+} 
+} 
+
+'edges    
+AbstractTopic1718290011XXXaddProducer1295200911 -> Producer1718290011XXXclose64711720;
+BacklogQuotaManager1718290011XXXhandleExceededBacklogQuota1796186035 -> Producer1718290011XXXdisconnect0;
+MessagePublishContext1660348955XXXcompleted1453117839 -> Producer1718290011XXXcloseNow64711720;
+MessagePublishContext1660348955XXXrun0 -> Producer1718290011XXXcloseNow64711720;
+NonPersistentTopic442146095XXXcheckGC0 -> Producer1718290011XXXdisconnect0;
+NonPersistentTopic442146095XXXclose64711720 -> Producer1718290011XXXdisconnect0;
+NonPersistentTopic442146095XXXdelete0 -> Producer1718290011XXXdisconnect0;
+NonPersistentTopic442146095XXXdeleteForcefully0 -> Producer1718290011XXXdisconnect0;
+NonPersistentTopic442146095XXXpublishMessage991694241 -> MessagePublishContext1660348955XXXcompleted1453117839;
+PersistentTopic1101090806XXXaddComplete1491430175 -> MessagePublishContext1660348955XXXcompleted1453117839;
+PersistentTopic1101090806XXXaddFailed715383354 -> MessagePublishContext1660348955XXXcompleted1453117839;
+PersistentTopic1101090806XXXaddFailed715383354 -> Producer1718290011XXXdisconnect0;
+PersistentTopic1101090806XXXcheckGC0 -> Producer1718290011XXXdisconnect0;
+PersistentTopic1101090806XXXclose64711720 -> Producer1718290011XXXdisconnect0;
+PersistentTopic1101090806XXXdelete0 -> Producer1718290011XXXdisconnect0;
+PersistentTopic1101090806XXXdeleteForcefully0 -> Producer1718290011XXXdisconnect0;
+PersistentTopic1101090806XXXpublishMessage991694241 -> MessagePublishContext1660348955XXXcompleted1453117839;
+PersistentTopic1101090806XXXpublishTxnMessage483951322 -> MessagePublishContext1660348955XXXcompleted1453117839;
+Producer1718290011XXXcheckEncryption0 -> Producer1718290011XXXdisconnect0;
+Producer1718290011XXXcheckPermissionsAsync0 -> Producer1718290011XXXdisconnect0;
+Producer1718290011XXXclose64711720 -> Producer1718290011XXXcloseNow64711720;
+Producer1718290011XXXcloseNow64711720 -> ServerCnx1718290011XXXremovedProducer939117646;
+Producer1718290011XXXdisconnect0 -> Producer1718290011XXXcloseNow64711720;
+PulsarDecoder1070348832XXXchannelRead995363995 -> Producer1718290011XXXclose64711720;
+PulsarDecoder1070348832XXXchannelRead995363995 -> Producer1718290011XXXcloseNow64711720;
+PulsarHandler1070348832XXXchannelInactive604153544 -> ServerCnx1718290011XXXchannelInactive604153544;
+ServerCnx1718290011XXXchannelInactive604153544 -> Producer1718290011XXXcloseNow64711720;
+ServerCnx1718290011XXXremovedProducer939117646 -> ConcurrentLongHashMap201476337XXXget3327612;
+ServerCnx1718290011XXXremovedProducer939117646 -> ConcurrentLongHashMap201476337XXXremove1897085007;
+    
+}
+@enduml

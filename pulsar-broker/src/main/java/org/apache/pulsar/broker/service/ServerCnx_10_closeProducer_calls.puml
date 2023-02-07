@@ -1,0 +1,1537 @@
+@startuml
+
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "org.apache.pulsar.broker.service.ServerCnx#closeProducer(Producer)",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
+    "showPackageLevels": 2,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "org.apache.pulsar.broker.service.ServerCnx",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1411517106 { 
+   	label=apache
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_523310109 { 
+   	label=pulsar
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   subgraph cluster_1009595974 { 
+   	label=CommandSuccess
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandSuccess297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandSuccess
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1071744038 { 
+   	label=CommandAddSubscriptionToTxn
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandAddSubscriptionToTxn297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandAddSubscriptionToTxn
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1084495104 { 
+   	label=CommandConnected
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandConnected297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandConnected
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1099842015 { 
+   	label=CommandCloseProducer
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandCloseProducer297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandCloseProducer
+
+null"
+	fontcolor=darkgreen
+];
+
+CommandCloseProducer297559756XXXsetProducerId3327612[
+	label="+ setProducerId()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandCloseProducer
+
+null"
+	fontcolor=darkgreen
+];
+
+CommandCloseProducer297559756XXXsetRequestId3327612[
+	label="+ setRequestId()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandCloseProducer
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1132581343 { 
+   	label=CommandAckResponse
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandAckResponse297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandAckResponse
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1184701567 { 
+   	label=CommandPartitionedTopicMetadataResponse
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandPartitionedTopicMetadataResponse297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandPartitionedTopicMetadataResponse
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_124729121 { 
+   	label=CommandConsumerStatsResponse
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandConsumerStatsResponse297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandConsumerStatsResponse
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1295067010 { 
+   	label=CommandAddPartitionToTxnResponse
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandAddPartitionToTxnResponse297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandAddPartitionToTxnResponse
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1348467880 { 
+   	label=NonPersistentTopic
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   NonPersistentTopic442146095XXXcheckGC0[
+	label="+ checkGC()"
+	style=filled
+	fillcolor=white
+	tooltip="NonPersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+NonPersistentTopic442146095XXXclose64711720[
+	label="+ close()"
+	style=filled
+	fillcolor=white
+	tooltip="NonPersistentTopic
+
+&#10;  Close this topic - close all producers and subscriptions associated with this topic.&#10; &#10;  @param closeWithoutWaitingClientDisconnect don't wait for client disconnect and forcefully close managed-ledger&#10;  @return Completable future indicating completion of close operation&#10; "
+	fontcolor=darkgreen
+];
+
+NonPersistentTopic442146095XXXdelete0[
+	label="+ delete()"
+	style=filled
+	fillcolor=white
+	tooltip="NonPersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+NonPersistentTopic442146095XXXdeleteForcefully0[
+	label="+ deleteForcefully()"
+	style=filled
+	fillcolor=white
+	tooltip="NonPersistentTopic
+
+&#10;  Forcefully close all producers/consumers/replicators and deletes the topic.&#10; &#10;  @return&#10; "
+	fontcolor=darkgreen
+];
+
+NonPersistentTopic442146095XXXonPoliciesUpdate611538288[
+	label="+ onPoliciesUpdate()"
+	style=filled
+	fillcolor=white
+	tooltip="NonPersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_138098803 { 
+   	label=CommandGetTopicsOfNamespace
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandGetTopicsOfNamespace297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandGetTopicsOfNamespace
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1398234495 { 
+   	label=CommandError
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandError297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandError
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1401742860 { 
+   	label=CommandLookupTopic
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandLookupTopic297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandLookupTopic
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1405374900 { 
+   	label=CommandEndTxnOnSubscription
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandEndTxnOnSubscription297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandEndTxnOnSubscription
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1579233516 { 
+   	label=CommandEndTxnOnPartitionResponse
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandEndTxnOnPartitionResponse297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandEndTxnOnPartitionResponse
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1645707584 { 
+   	label=CommandConsumerStats
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandConsumerStats297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandConsumerStats
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1660348955 { 
+   	label=Producer
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Producer1718290011XXXcheckEncryption0[
+	label="+ checkEncryption()"
+	style=filled
+	fillcolor=white
+	tooltip="Producer
+
+null"
+	fontcolor=darkgreen
+];
+
+Producer1718290011XXXcheckPermissionsAsync0[
+	label="+ checkPermissionsAsync()"
+	style=filled
+	fillcolor=white
+	tooltip="Producer
+
+null"
+	fontcolor=darkgreen
+];
+
+Producer1718290011XXXdisconnect0[
+	label="+ disconnect()"
+	style=filled
+	fillcolor=white
+	tooltip="Producer
+
+&#10;  It closes the producer from server-side and sends command to client to disconnect producer from existing&#10;  connection without closing that connection.&#10; &#10;  @return Completable future indicating completion of producer close&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1712165485 { 
+   	label=CommandLookupTopicResponse
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandLookupTopicResponse297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandLookupTopicResponse
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1713935946 { 
+   	label=CommandRedeliverUnacknowledgedMessages
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandRedeliverUnacknowledgedMessages297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandRedeliverUnacknowledgedMessages
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1789558120 { 
+   	label=CommandTcClientConnectRequest
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandTcClientConnectRequest297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandTcClientConnectRequest
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_179445426 { 
+   	label=CommandAuthResponse
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandAuthResponse297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandAuthResponse
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1808925345 { 
+   	label=CommandConnect
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandConnect297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandConnect
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1812498878 { 
+   	label=CommandMessage
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandMessage297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandMessage
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_183675607 { 
+   	label=CommandFlow
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandFlow297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandFlow
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_183970587 { 
+   	label=CommandPing
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandPing297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandPing
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_183976353 { 
+   	label=CommandPong
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandPong297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandPong
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_184055841 { 
+   	label=CommandSeek
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandSeek297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandSeek
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_184056113 { 
+   	label=CommandSend
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandSend297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandSend
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1842205426 { 
+   	label=NonPersistentTopics
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   NonPersistentTopics620988780XXXunloadTopic1197121539[
+	label="+ unloadTopic()"
+	style=filled
+	fillcolor=white
+	tooltip="NonPersistentTopics
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1850132746 { 
+   	label=Commands
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Commands1070348832XXXnewCloseProducer1860834452[
+	label="+ newCloseProducer()"
+	style=filled
+	fillcolor=white
+	tooltip="Commands
+
+null"
+	fontcolor=darkgreen
+];
+
+Commands1070348832XXXserializeWithSize624753434[
+	label="+ serializeWithSize()"
+	style=filled
+	fillcolor=white
+	tooltip="Commands
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_188777285 { 
+   	label=CommandProducer
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandProducer297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandProducer
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1908622925 { 
+   	label=CommandEndTxnOnPartition
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandEndTxnOnPartition297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandEndTxnOnPartition
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1945957077 { 
+   	label=PersistentTopics
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PersistentTopics620988780XXXunloadTopic1197121539[
+	label="+ unloadTopic()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopics
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_2039573362 { 
+   	label=CommandGetOrCreateSchemaResponse
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandGetOrCreateSchemaResponse297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandGetOrCreateSchemaResponse
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_242742165 { 
+   	label=CommandActiveConsumerChange
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandActiveConsumerChange297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandActiveConsumerChange
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_25257683 { 
+   	label=CommandGetOrCreateSchema
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandGetOrCreateSchema297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandGetOrCreateSchema
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_255286754 { 
+   	label=CommandPartitionedTopicMetadata
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandPartitionedTopicMetadata297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandPartitionedTopicMetadata
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_282742926 { 
+   	label=CommandGetSchema
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandGetSchema297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandGetSchema
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_283014592 { 
+   	label=CommandAck
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandAck297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandAck
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_305339256 { 
+   	label=CommandTcClientConnectResponse
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandTcClientConnectResponse297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandTcClientConnectResponse
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_309943608 { 
+   	label=CommandProducerSuccess
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandProducerSuccess297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandProducerSuccess
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_330549314 { 
+   	label=ConcurrentLongHashMap
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ConcurrentLongHashMap201476337XXXget3327612[
+	label="+ get()"
+	style=filled
+	fillcolor=white
+	tooltip="ConcurrentLongHashMap
+
+null"
+	fontcolor=darkgreen
+];
+
+ConcurrentLongHashMap201476337XXXremove1897085007[
+	label="+ remove()"
+	style=filled
+	fillcolor=white
+	tooltip="ConcurrentLongHashMap
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_333026342 { 
+   	label=CommandReachedEndOfTopic
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandReachedEndOfTopic297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandReachedEndOfTopic
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_335593490 { 
+   	label=CommandAuthChallenge
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandAuthChallenge297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandAuthChallenge
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_336068872 { 
+   	label=CommandUnsubscribe
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandUnsubscribe297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandUnsubscribe
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_359057108 { 
+   	label=PersistentTopic
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PersistentTopic1101090806XXXaddFailed715383354[
+	label="+ addFailed()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXcheckGC0[
+	label="+ checkGC()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXcheckReplication0[
+	label="+ checkReplication()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXclose0[
+	label="+ close()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXclose64711720[
+	label="+ close()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+&#10;  Close this topic - close all producers and subscriptions associated with this topic.&#10; &#10;  @param closeWithoutWaitingClientDisconnect don't wait for client disconnect and forcefully close managed-ledger&#10;  @return Completable future indicating completion of close operation&#10; "
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXdelete0[
+	label="+ delete()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+&#10;  Delete the managed ledger associated with this topic.&#10; &#10;  @return Completable future indicating completion of delete operation Completed exceptionally with:&#10;  IllegalStateException if topic is still active ManagedLedgerException if ledger delete operation fails&#10; "
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXdeleteForcefully0[
+	label="+ deleteForcefully()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+&#10;  Forcefully close all producers/consumers/replicators and deletes the topic. this function is used when local&#10;  cluster is removed from global-namespace replication list. Because broker doesn't allow lookup if local cluster&#10;  is not part of replication cluster list.&#10; &#10;  @return&#10; "
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXonPoliciesUpdate611538288[
+	label="+ onPoliciesUpdate()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXpublishTxnMessage483951322[
+	label="+ publishTxnMessage()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+&#10;  Publish Transaction message to this Topic's TransactionBuffer.&#10; &#10;  @param txnID Transaction Id&#10;  @param headersAndPayload Message data&#10;  @param publishContextPublish context&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_37770612 { 
+   	label=CommandNewTxnResponse
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandNewTxnResponse297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandNewTxnResponse
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_391459576 { 
+   	label=CommandEndTxn
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandEndTxn297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandEndTxn
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_400332289 { 
+   	label=CommandGetLastMessageId
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandGetLastMessageId297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandGetLastMessageId
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_502628521 { 
+   	label=CommandSendError
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandSendError297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandSendError
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_505400487 { 
+   	label=CommandEndTxnResponse
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandEndTxnResponse297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandEndTxnResponse
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_533892564 { 
+   	label=CommandGetTopicsOfNamespaceResponse
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandGetTopicsOfNamespaceResponse297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandGetTopicsOfNamespaceResponse
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_56109951 { 
+   	label=BacklogQuotaManager
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   BacklogQuotaManager1718290011XXXhandleExceededBacklogQuota1796186035[
+	label="+ handleExceededBacklogQuota()"
+	style=filled
+	fillcolor=white
+	tooltip="BacklogQuotaManager
+
+&#10;  Handle exceeded size backlog by using policies set in the zookeeper for given topic.&#10; &#10;  @param persistentTopic Topic on which backlog has been exceeded&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_571606983 { 
+   	label=CommandSendReceipt
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandSendReceipt297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandSendReceipt
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_602228472 { 
+   	label=BaseCommand
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   BaseCommand297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="BaseCommand
+
+null"
+	fontcolor=darkgreen
+];
+
+BaseCommand297559756XXXsetCloseProducer0[
+	label="+ setCloseProducer()"
+	style=filled
+	fillcolor=white
+	tooltip="BaseCommand
+
+null"
+	fontcolor=darkgreen
+];
+
+BaseCommand297559756XXXsetType2622298[
+	label="+ setType()"
+	style=filled
+	fillcolor=white
+	tooltip="BaseCommand
+
+null"
+	fontcolor=darkgreen
+];
+
+BaseCommand297559756XXXwriteTo2020032555[
+	label="+ writeTo()"
+	style=filled
+	fillcolor=white
+	tooltip="BaseCommand
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_641376275 { 
+   	label=CommandNewTxn
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandNewTxn297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandNewTxn
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_647157269 { 
+   	label=CommandEndTxnOnSubscriptionResponse
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandEndTxnOnSubscriptionResponse297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandEndTxnOnSubscriptionResponse
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_655448815 { 
+   	label=CommandGetSchemaResponse
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandGetSchemaResponse297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandGetSchemaResponse
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_663850363 { 
+   	label=CommandCloseConsumer
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandCloseConsumer297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandCloseConsumer
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_704824873 { 
+   	label=BrokerService
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   BrokerService1718290011XXXdeleteTopic1344699505[
+	label="+ deleteTopic()"
+	style=filled
+	fillcolor=white
+	tooltip="BrokerService
+
+null"
+	fontcolor=darkgreen
+];
+
+BrokerService1718290011XXXmonitorBacklogQuota0[
+	label="+ monitorBacklogQuota()"
+	style=filled
+	fillcolor=white
+	tooltip="BrokerService
+
+null"
+	fontcolor=darkgreen
+];
+
+BrokerService1718290011XXXunloadServiceUnit2087797420[
+	label="+ unloadServiceUnit()"
+	style=filled
+	fillcolor=white
+	tooltip="BrokerService
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_716473797 { 
+   	label=CommandAddSubscriptionToTxnResponse
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandAddSubscriptionToTxnResponse297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandAddSubscriptionToTxnResponse
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_744895203 { 
+   	label=CommandAddPartitionToTxn
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandAddPartitionToTxn297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandAddPartitionToTxn
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_923169591 { 
+   	label=ServerCnx
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ServerCnx1718290011XXXcloseProducer939117646[
+	label="+ closeProducer()"
+	style=filled
+	fillcolor=white
+	tooltip="ServerCnx
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_9557313 { 
+   	label=CommandSubscribe
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandSubscribe297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandSubscribe
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_966364320 { 
+   	label=CommandGetLastMessageIdResponse
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CommandGetLastMessageIdResponse297559756XXXclear0[
+	label="+ clear()"
+	style=filled
+	fillcolor=white
+	tooltip="CommandGetLastMessageIdResponse
+
+null"
+	fontcolor=darkgreen
+];
+} 
+} 
+
+subgraph cluster_91979707 { 
+   	label=bookkeeper
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   subgraph cluster_569476203 { 
+   	label=OpAddEntry
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   OpAddEntry997059435XXXfailed469076839[
+	label="+ failed()"
+	style=filled
+	fillcolor=white
+	tooltip="OpAddEntry
+
+null"
+	fontcolor=darkgreen
+];
+} 
+} 
+} 
+
+'edges    
+BacklogQuotaManager1718290011XXXhandleExceededBacklogQuota1796186035 -> Producer1718290011XXXdisconnect0;
+BaseCommand297559756XXXclear0 -> CommandAck297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandAckResponse297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandActiveConsumerChange297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandAddPartitionToTxn297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandAddPartitionToTxnResponse297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandAddSubscriptionToTxn297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandAddSubscriptionToTxnResponse297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandAuthChallenge297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandAuthResponse297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandCloseConsumer297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandCloseProducer297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandConnect297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandConnected297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandConsumerStats297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandConsumerStatsResponse297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandEndTxn297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandEndTxnOnPartition297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandEndTxnOnPartitionResponse297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandEndTxnOnSubscription297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandEndTxnOnSubscriptionResponse297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandEndTxnResponse297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandError297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandFlow297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandGetLastMessageId297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandGetLastMessageIdResponse297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandGetOrCreateSchema297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandGetOrCreateSchemaResponse297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandGetSchema297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandGetSchemaResponse297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandGetTopicsOfNamespace297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandGetTopicsOfNamespaceResponse297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandLookupTopic297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandLookupTopicResponse297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandMessage297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandNewTxn297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandNewTxnResponse297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandPartitionedTopicMetadata297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandPartitionedTopicMetadataResponse297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandPing297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandPong297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandProducer297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandProducerSuccess297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandReachedEndOfTopic297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandRedeliverUnacknowledgedMessages297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandSeek297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandSend297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandSendError297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandSendReceipt297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandSubscribe297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandSuccess297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandTcClientConnectRequest297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandTcClientConnectResponse297559756XXXclear0;
+BaseCommand297559756XXXclear0 -> CommandUnsubscribe297559756XXXclear0;
+BrokerService1718290011XXXdeleteTopic1344699505 -> NonPersistentTopic442146095XXXdelete0;
+BrokerService1718290011XXXdeleteTopic1344699505 -> NonPersistentTopic442146095XXXdeleteForcefully0;
+BrokerService1718290011XXXmonitorBacklogQuota0 -> BacklogQuotaManager1718290011XXXhandleExceededBacklogQuota1796186035;
+BrokerService1718290011XXXunloadServiceUnit2087797420 -> NonPersistentTopic442146095XXXclose64711720;
+Commands1070348832XXXnewCloseProducer1860834452 -> BaseCommand297559756XXXclear0;
+Commands1070348832XXXnewCloseProducer1860834452 -> BaseCommand297559756XXXsetCloseProducer0;
+Commands1070348832XXXnewCloseProducer1860834452 -> BaseCommand297559756XXXsetType2622298;
+Commands1070348832XXXnewCloseProducer1860834452 -> CommandCloseProducer297559756XXXsetProducerId3327612;
+Commands1070348832XXXnewCloseProducer1860834452 -> CommandCloseProducer297559756XXXsetRequestId3327612;
+Commands1070348832XXXnewCloseProducer1860834452 -> Commands1070348832XXXserializeWithSize624753434;
+Commands1070348832XXXserializeWithSize624753434 -> BaseCommand297559756XXXwriteTo2020032555;
+NonPersistentTopic442146095XXXcheckGC0 -> Producer1718290011XXXdisconnect0;
+NonPersistentTopic442146095XXXclose64711720 -> Producer1718290011XXXdisconnect0;
+NonPersistentTopic442146095XXXdelete0 -> Producer1718290011XXXdisconnect0;
+NonPersistentTopic442146095XXXdeleteForcefully0 -> Producer1718290011XXXdisconnect0;
+NonPersistentTopic442146095XXXonPoliciesUpdate611538288 -> Producer1718290011XXXcheckPermissionsAsync0;
+NonPersistentTopics620988779XXXunloadTopic1592718600 -> NonPersistentTopic442146095XXXclose64711720;
+NonPersistentTopics620988780XXXunloadTopic1197121539 -> NonPersistentTopic442146095XXXclose64711720;
+OpAddEntry997059435XXXfailed469076839 -> PersistentTopic1101090806XXXaddFailed715383354;
+PersistentTopic1101090806XXXaddFailed715383354 -> Producer1718290011XXXdisconnect0;
+PersistentTopic1101090806XXXcheckGC0 -> Producer1718290011XXXdisconnect0;
+PersistentTopic1101090806XXXcheckReplication0 -> PersistentTopic1101090806XXXdeleteForcefully0;
+PersistentTopic1101090806XXXclose0 -> PersistentTopic1101090806XXXclose64711720;
+PersistentTopic1101090806XXXclose64711720 -> Producer1718290011XXXdisconnect0;
+PersistentTopic1101090806XXXdelete0 -> Producer1718290011XXXdisconnect0;
+PersistentTopic1101090806XXXdeleteForcefully0 -> Producer1718290011XXXdisconnect0;
+PersistentTopic1101090806XXXonPoliciesUpdate611538288 -> Producer1718290011XXXcheckPermissionsAsync0;
+PersistentTopic1101090806XXXpublishTxnMessage483951322 -> PersistentTopic1101090806XXXaddFailed715383354;
+PersistentTopics620988779XXXunloadTopic1592718600 -> NonPersistentTopic442146095XXXclose64711720;
+PersistentTopics620988780XXXunloadTopic1197121539 -> NonPersistentTopic442146095XXXclose64711720;
+Producer1718290011XXXcheckEncryption0 -> Producer1718290011XXXdisconnect0;
+Producer1718290011XXXcheckPermissionsAsync0 -> Producer1718290011XXXdisconnect0;
+Producer1718290011XXXdisconnect0 -> ServerCnx1718290011XXXcloseProducer939117646;
+ServerCnx1718290011XXXcloseProducer939117646 -> Commands1070348832XXXnewCloseProducer1860834452;
+ServerCnx1718290011XXXcloseProducer939117646 -> ConcurrentLongHashMap201476337XXXget3327612;
+ServerCnx1718290011XXXcloseProducer939117646 -> ConcurrentLongHashMap201476337XXXremove1897085007;
+    
+}
+@enduml

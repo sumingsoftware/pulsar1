@@ -1,0 +1,648 @@
+@startuml
+
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "org.apache.pulsar.broker.service.ServerCnx#getBrokerService()",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
+    "showPackageLevels": 2,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "org.apache.pulsar.broker.service.ServerCnx",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1411517106 { 
+   	label=apache
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_523310109 { 
+   	label=pulsar
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   subgraph cluster_1014604199 { 
+   	label=PulsarDecoder
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PulsarDecoder1070348832XXXchannelRead995363995[
+	label="+ channelRead()"
+	style=filled
+	fillcolor=white
+	tooltip="PulsarDecoder
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1046280548 { 
+   	label=ClientCnx
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ClientCnx12001400XXXchannelActive604153544[
+	label="+ channelActive()"
+	style=filled
+	fillcolor=white
+	tooltip="ClientCnx
+
+null"
+	fontcolor=darkgreen
+];
+
+ClientCnx12001400XXXchannelInactive604153544[
+	label="+ channelInactive()"
+	style=filled
+	fillcolor=white
+	tooltip="ClientCnx
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1224357303 { 
+   	label=Consumer
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Consumer1718290011XXXcheckPermissionsAsync0[
+	label="+ checkPermissionsAsync()"
+	style=filled
+	fillcolor=white
+	tooltip="Consumer
+
+null"
+	fontcolor=darkgreen
+];
+
+Consumer1718290011XXXsendMessages1093529996[
+	label="+ sendMessages()"
+	style=filled
+	fillcolor=white
+	tooltip="Consumer
+
+&#10;  Dispatch a list of entries to the consumer. \<br/\>&#10;  \<b\>It is also responsible to release entries data and recycle entries object.\</b\>&#10; &#10;  @return a SendMessageInfo object that contains the detail of what was sent to consumer&#10; "
+	fontcolor=darkgreen
+];
+
+Consumer1718290011XXXsendMessages1436037244[
+	label="+ sendMessages()"
+	style=filled
+	fillcolor=white
+	tooltip="Consumer
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_124084772 { 
+   	label=SystemTopicBasedTopicPoliciesService
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   SystemTopicBasedTopicPoliciesService1718290011XXXaddOwnedNamespaceBundleAsync4359779[
+	label="+ addOwnedNamespaceBundleAsync()"
+	style=filled
+	fillcolor=white
+	tooltip="SystemTopicBasedTopicPoliciesService
+
+&#10;  Add owned namespace bundle async.&#10; &#10;  @param namespaceBundle namespace bundle&#10; "
+	fontcolor=darkgreen
+];
+
+SystemTopicBasedTopicPoliciesService1718290011XXXgetTopicPolicies896766266[
+	label="+ getTopicPolicies()"
+	style=filled
+	fillcolor=white
+	tooltip="SystemTopicBasedTopicPoliciesService
+
+&#10;  Get global policies for a topic async.&#10;  @param topicName topic name&#10;  @return future of the topic policies&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1348467880 { 
+   	label=NonPersistentTopic
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   NonPersistentTopic442146095XXXonPoliciesUpdate611538288[
+	label="+ onPoliciesUpdate()"
+	style=filled
+	fillcolor=white
+	tooltip="NonPersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+NonPersistentTopic442146095XXXpublishMessage991694241[
+	label="+ publishMessage()"
+	style=filled
+	fillcolor=white
+	tooltip="NonPersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1388282347 { 
+   	label=ProxyBackendHandler
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ProxyBackendHandler828483243XXXchannelRead995363995[
+	label="+ channelRead()"
+	style=filled
+	fillcolor=white
+	tooltip="ProxyBackendHandler
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1579858382 { 
+   	label=PersistentStreamingDispatcherSingleActiveConsumer
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PersistentStreamingDispatcherSingleActiveConsumer1101090806XXXinternalReadEntryComplete274903556[
+	label="+ internalReadEntryComplete()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentStreamingDispatcherSingleActiveConsumer
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1580024560 { 
+   	label=PulsarCommandSenderImpl
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PulsarCommandSenderImpl1718290011XXXsendMessagesToConsumer1208411256[
+	label="+ sendMessagesToConsumer()"
+	style=filled
+	fillcolor=white
+	tooltip="PulsarCommandSenderImpl
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1660348955 { 
+   	label=Producer
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Producer1718290011XXXcheckAndStartPublish1302195195[
+	label="+ checkAndStartPublish()"
+	style=filled
+	fillcolor=white
+	tooltip="Producer
+
+null"
+	fontcolor=darkgreen
+];
+
+Producer1718290011XXXcheckPermissionsAsync0[
+	label="+ checkPermissionsAsync()"
+	style=filled
+	fillcolor=white
+	tooltip="Producer
+
+null"
+	fontcolor=darkgreen
+];
+
+Producer1718290011XXXpublishMessage1309573701[
+	label="+ publishMessage()"
+	style=filled
+	fillcolor=white
+	tooltip="Producer
+
+null"
+	fontcolor=darkgreen
+];
+
+Producer1718290011XXXpublishMessage1717589301[
+	label="+ publishMessage()"
+	style=filled
+	fillcolor=white
+	tooltip="Producer
+
+null"
+	fontcolor=darkgreen
+];
+
+Producer1718290011XXXpublishTxnMessage617694510[
+	label="+ publishTxnMessage()"
+	style=filled
+	fillcolor=white
+	tooltip="Producer
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1864234657 { 
+   	label=PulsarHandler
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PulsarHandler1070348832XXXchannelActive604153544[
+	label="+ channelActive()"
+	style=filled
+	fillcolor=white
+	tooltip="PulsarHandler
+
+null"
+	fontcolor=darkgreen
+];
+
+PulsarHandler1070348832XXXchannelInactive604153544[
+	label="+ channelInactive()"
+	style=filled
+	fillcolor=white
+	tooltip="PulsarHandler
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1975659038 { 
+   	label=MessagePublishContext
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   MessagePublishContext1660348955XXXcompleted1453117839[
+	label="+ completed()"
+	style=filled
+	fillcolor=white
+	tooltip="MessagePublishContext
+
+&#10;  Executed from managed ledger thread when the message is persisted.&#10; "
+	fontcolor=darkgreen
+];
+
+MessagePublishContext1660348955XXXrun0[
+	label="+ run()"
+	style=filled
+	fillcolor=white
+	tooltip="MessagePublishContext
+
+&#10;  Executed from I/O thread when sending receipt back to client.&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_300981562 { 
+   	label=PersistentDispatcherSingleActiveConsumer
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PersistentDispatcherSingleActiveConsumer1101090806XXXinternalReadEntriesComplete1160535363[
+	label="+ internalReadEntriesComplete()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentDispatcherSingleActiveConsumer
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_359057108 { 
+   	label=PersistentTopic
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PersistentTopic1101090806XXXaddComplete1491430175[
+	label="+ addComplete()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXaddFailed715383354[
+	label="+ addFailed()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXinitialize0[
+	label="+ initialize()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXonPoliciesUpdate611538288[
+	label="+ onPoliciesUpdate()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXonUpdate1780265855[
+	label="+ onUpdate()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXpublishMessage991694241[
+	label="+ publishMessage()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXpublishTxnMessage483951322[
+	label="+ publishTxnMessage()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+&#10;  Publish Transaction message to this Topic's TransactionBuffer.&#10; &#10;  @param txnID Transaction Id&#10;  @param headersAndPayload Message data&#10;  @param publishContextPublish context&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_923169591 { 
+   	label=ServerCnx
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ServerCnx1718290011XXXchannelActive604153544[
+	label="+ channelActive()"
+	style=filled
+	fillcolor=white
+	tooltip="ServerCnx
+
+null"
+	fontcolor=darkgreen
+];
+
+ServerCnx1718290011XXXchannelInactive604153544[
+	label="+ channelInactive()"
+	style=filled
+	fillcolor=white
+	tooltip="ServerCnx
+
+null"
+	fontcolor=darkgreen
+];
+
+ServerCnx1718290011XXXcompletedSendOperation1088021805[
+	label="+ completedSendOperation()"
+	style=filled
+	fillcolor=white
+	tooltip="ServerCnx
+
+null"
+	fontcolor=darkgreen
+];
+
+ServerCnx1718290011XXXgetBrokerService0[
+	label="+ getBrokerService()"
+	style=filled
+	fillcolor=white
+	tooltip="ServerCnx
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+
+ServerCnx1718290011XXXnewMessageAndIntercept328905246[
+	label="+ newMessageAndIntercept()"
+	style=filled
+	fillcolor=white
+	tooltip="ServerCnx
+
+null"
+	fontcolor=darkgreen
+];
+
+ServerCnx1718290011XXXstartSendOperation1291107822[
+	label="+ startSendOperation()"
+	style=filled
+	fillcolor=white
+	tooltip="ServerCnx
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_961973220 { 
+   	label=ProxyConnection
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ProxyConnection79518146XXXchannelActive604153544[
+	label="+ channelActive()"
+	style=filled
+	fillcolor=white
+	tooltip="ProxyConnection
+
+null"
+	fontcolor=darkgreen
+];
+
+ProxyConnection79518146XXXchannelInactive604153544[
+	label="+ channelInactive()"
+	style=filled
+	fillcolor=white
+	tooltip="ProxyConnection
+
+null"
+	fontcolor=darkgreen
+];
+
+ProxyConnection79518146XXXchannelRead995363995[
+	label="+ channelRead()"
+	style=filled
+	fillcolor=white
+	tooltip="ProxyConnection
+
+null"
+	fontcolor=darkgreen
+];
+} 
+} 
+} 
+
+'edges    
+ClientCnx12001400XXXchannelActive604153544 -> PulsarHandler1070348832XXXchannelActive604153544;
+ClientCnx12001400XXXchannelInactive604153544 -> PulsarHandler1070348832XXXchannelInactive604153544;
+Consumer1718290011XXXcheckPermissionsAsync0 -> ServerCnx1718290011XXXgetBrokerService0;
+Consumer1718290011XXXsendMessages1093529996 -> PulsarCommandSenderImpl1718290011XXXsendMessagesToConsumer1208411256;
+Consumer1718290011XXXsendMessages1436037244 -> Consumer1718290011XXXsendMessages1093529996;
+MessagePublishContext1660348955XXXcompleted1453117839 -> ServerCnx1718290011XXXcompletedSendOperation1088021805;
+MessagePublishContext1660348955XXXrun0 -> ServerCnx1718290011XXXcompletedSendOperation1088021805;
+MessagePublishContext1660348955XXXrun0 -> ServerCnx1718290011XXXgetBrokerService0;
+NonPersistentTopic442146095XXXonPoliciesUpdate611538288 -> Consumer1718290011XXXcheckPermissionsAsync0;
+NonPersistentTopic442146095XXXonPoliciesUpdate611538288 -> Producer1718290011XXXcheckPermissionsAsync0;
+NonPersistentTopic442146095XXXpublishMessage991694241 -> MessagePublishContext1660348955XXXcompleted1453117839;
+PersistentDispatcherSingleActiveConsumer1101090806XXXinternalReadEntriesComplete1160535363 -> Consumer1718290011XXXsendMessages1093529996;
+PersistentStreamingDispatcherSingleActiveConsumer1101090806XXXinternalReadEntryComplete274903556 -> Consumer1718290011XXXsendMessages1093529996;
+PersistentTopic1101090806XXXaddComplete1491430175 -> MessagePublishContext1660348955XXXcompleted1453117839;
+PersistentTopic1101090806XXXaddFailed715383354 -> MessagePublishContext1660348955XXXcompleted1453117839;
+PersistentTopic1101090806XXXinitialize0 -> PersistentTopic1101090806XXXonUpdate1780265855;
+PersistentTopic1101090806XXXonPoliciesUpdate611538288 -> Consumer1718290011XXXcheckPermissionsAsync0;
+PersistentTopic1101090806XXXonPoliciesUpdate611538288 -> Producer1718290011XXXcheckPermissionsAsync0;
+PersistentTopic1101090806XXXonUpdate1780265855 -> Consumer1718290011XXXcheckPermissionsAsync0;
+PersistentTopic1101090806XXXpublishMessage991694241 -> MessagePublishContext1660348955XXXcompleted1453117839;
+PersistentTopic1101090806XXXpublishTxnMessage483951322 -> MessagePublishContext1660348955XXXcompleted1453117839;
+Producer1718290011XXXcheckAndStartPublish1302195195 -> ServerCnx1718290011XXXcompletedSendOperation1088021805;
+Producer1718290011XXXcheckPermissionsAsync0 -> ServerCnx1718290011XXXgetBrokerService0;
+Producer1718290011XXXpublishMessage1309573701 -> Producer1718290011XXXcheckAndStartPublish1302195195;
+Producer1718290011XXXpublishMessage1717589301 -> Producer1718290011XXXcheckAndStartPublish1302195195;
+Producer1718290011XXXpublishMessage1717589301 -> ServerCnx1718290011XXXcompletedSendOperation1088021805;
+Producer1718290011XXXpublishTxnMessage617694510 -> Producer1718290011XXXcheckAndStartPublish1302195195;
+ProxyBackendHandler828483243XXXchannelRead995363995 -> PulsarDecoder1070348832XXXchannelRead995363995;
+ProxyConnection79518146XXXchannelActive604153544 -> PulsarHandler1070348832XXXchannelActive604153544;
+ProxyConnection79518146XXXchannelInactive604153544 -> PulsarHandler1070348832XXXchannelInactive604153544;
+ProxyConnection79518146XXXchannelRead995363995 -> PulsarDecoder1070348832XXXchannelRead995363995;
+PulsarCommandSenderImpl1718290011XXXsendMessagesToConsumer1208411256 -> ServerCnx1718290011XXXgetBrokerService0;
+PulsarCommandSenderImpl1718290011XXXsendMessagesToConsumer1208411256 -> ServerCnx1718290011XXXnewMessageAndIntercept328905246;
+PulsarDecoder1070348832XXXchannelRead995363995 -> ProxyBackendHandler828483243XXXchannelRead995363995;
+PulsarDecoder1070348832XXXchannelRead995363995 -> ProxyConnection79518146XXXchannelRead995363995;
+PulsarDecoder1070348832XXXchannelRead995363995 -> ServerCnx1718290011XXXgetBrokerService0;
+PulsarDecoder1070348832XXXchannelRead995363995 -> ServerCnx1718290011XXXstartSendOperation1291107822;
+PulsarHandler1070348832XXXchannelActive604153544 -> ServerCnx1718290011XXXchannelActive604153544;
+PulsarHandler1070348832XXXchannelInactive604153544 -> ServerCnx1718290011XXXchannelInactive604153544;
+ServerCnx1718290011XXXchannelActive604153544 -> PulsarHandler1070348832XXXchannelActive604153544;
+ServerCnx1718290011XXXchannelActive604153544 -> ServerCnx1718290011XXXgetBrokerService0;
+ServerCnx1718290011XXXchannelInactive604153544 -> PulsarHandler1070348832XXXchannelInactive604153544;
+ServerCnx1718290011XXXchannelInactive604153544 -> ServerCnx1718290011XXXgetBrokerService0;
+ServerCnx1718290011XXXcompletedSendOperation1088021805 -> ServerCnx1718290011XXXgetBrokerService0;
+ServerCnx1718290011XXXnewMessageAndIntercept328905246 -> ServerCnx1718290011XXXgetBrokerService0;
+ServerCnx1718290011XXXstartSendOperation1291107822 -> ServerCnx1718290011XXXgetBrokerService0;
+SystemTopicBasedTopicPoliciesService1718290011XXXaddOwnedNamespaceBundleAsync4359779 -> PersistentTopic1101090806XXXonUpdate1780265855;
+SystemTopicBasedTopicPoliciesService1718290011XXXgetTopicPolicies896766266 -> PersistentTopic1101090806XXXonUpdate1780265855;
+    
+}
+@enduml

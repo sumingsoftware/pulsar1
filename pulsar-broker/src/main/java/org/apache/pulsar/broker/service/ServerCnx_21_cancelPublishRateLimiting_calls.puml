@@ -1,0 +1,312 @@
+@startuml
+
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "org.apache.pulsar.broker.service.ServerCnx#cancelPublishRateLimiting()",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
+    "showPackageLevels": 2,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "org.apache.pulsar.broker.service.ServerCnx",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1411517106 { 
+   	label=apache
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_523310109 { 
+   	label=pulsar
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   subgraph cluster_124084772 { 
+   	label=SystemTopicBasedTopicPoliciesService
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   SystemTopicBasedTopicPoliciesService1718290011XXXaddOwnedNamespaceBundleAsync4359779[
+	label="+ addOwnedNamespaceBundleAsync()"
+	style=filled
+	fillcolor=white
+	tooltip="SystemTopicBasedTopicPoliciesService
+
+&#10;  Add owned namespace bundle async.&#10; &#10;  @param namespaceBundle namespace bundle&#10; "
+	fontcolor=darkgreen
+];
+
+SystemTopicBasedTopicPoliciesService1718290011XXXgetTopicPolicies896766266[
+	label="+ getTopicPolicies()"
+	style=filled
+	fillcolor=white
+	tooltip="SystemTopicBasedTopicPoliciesService
+
+&#10;  Get global policies for a topic async.&#10;  @param topicName topic name&#10;  @return future of the topic policies&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1301977158 { 
+   	label=AbstractTopic
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   AbstractTopic1718290011XXXresetBrokerPublishCountAndEnableReadIfRequired64711720[
+	label="+ resetBrokerPublishCountAndEnableReadIfRequired()"
+	style=filled
+	fillcolor=white
+	tooltip="AbstractTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+AbstractTopic1718290011XXXresetTopicPublishCountAndEnableReadIfRequired0[
+	label="+ resetTopicPublishCountAndEnableReadIfRequired()"
+	style=filled
+	fillcolor=white
+	tooltip="AbstractTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+AbstractTopic1718290011XXXupdatePublishDispatcher0[
+	label="+ updatePublishDispatcher()"
+	style=filled
+	fillcolor=white
+	tooltip="AbstractTopic
+
+&#10;  update topic publish dispatcher for this topic.&#10; "
+	fontcolor=darkgreen
+];
+
+AbstractTopic1718290011XXXupdateResourceGroupLimiter706925678[
+	label="+ updateResourceGroupLimiter()"
+	style=filled
+	fillcolor=white
+	tooltip="AbstractTopic
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1348467880 { 
+   	label=NonPersistentTopic
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   NonPersistentTopic442146095XXXinitialize0[
+	label="+ initialize()"
+	style=filled
+	fillcolor=white
+	tooltip="NonPersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_359057108 { 
+   	label=PersistentTopic
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PersistentTopic1101090806XXXinitialize0[
+	label="+ initialize()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXonPoliciesUpdate611538288[
+	label="+ onPoliciesUpdate()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXonUpdate1780265855[
+	label="+ onUpdate()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_704824873 { 
+   	label=BrokerService
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   BrokerService1718290011XXXgetTopic1865999729[
+	label="+ getTopic()"
+	style=filled
+	fillcolor=white
+	tooltip="BrokerService
+
+null"
+	fontcolor=darkgreen
+];
+
+BrokerService1718290011XXXstart0[
+	label="+ start()"
+	style=filled
+	fillcolor=white
+	tooltip="BrokerService
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_787305602 { 
+   	label=PulsarService
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PulsarService724302956XXXstart0[
+	label="+ start()"
+	style=filled
+	fillcolor=white
+	tooltip="PulsarService
+
+&#10;  Start the pulsar service instance.&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_923169591 { 
+   	label=ServerCnx
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ServerCnx1718290011XXXcancelPublishRateLimiting0[
+	label="+ cancelPublishRateLimiting()"
+	style=filled
+	fillcolor=white
+	tooltip="ServerCnx
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+} 
+} 
+} 
+
+'edges    
+AbstractTopic1718290011XXXresetBrokerPublishCountAndEnableReadIfRequired64711720 -> ServerCnx1718290011XXXcancelPublishRateLimiting0;
+AbstractTopic1718290011XXXresetTopicPublishCountAndEnableReadIfRequired0 -> ServerCnx1718290011XXXcancelPublishRateLimiting0;
+AbstractTopic1718290011XXXupdatePublishDispatcher0 -> ServerCnx1718290011XXXcancelPublishRateLimiting0;
+AbstractTopic1718290011XXXupdateResourceGroupLimiter706925678 -> ServerCnx1718290011XXXcancelPublishRateLimiting0;
+BrokerService1718290011XXXgetTopic1865999729 -> NonPersistentTopic442146095XXXinitialize0;
+BrokerService1718290011XXXgetTopic1865999729 -> PersistentTopic1101090806XXXinitialize0;
+BrokerService1718290011XXXstart0 -> AbstractTopic1718290011XXXresetBrokerPublishCountAndEnableReadIfRequired64711720;
+NonPersistentTopic442146095XXXinitialize0 -> AbstractTopic1718290011XXXupdatePublishDispatcher0;
+NonPersistentTopic442146095XXXinitialize0 -> AbstractTopic1718290011XXXupdateResourceGroupLimiter706925678;
+PersistentTopic1101090806XXXinitialize0 -> AbstractTopic1718290011XXXupdatePublishDispatcher0;
+PersistentTopic1101090806XXXinitialize0 -> AbstractTopic1718290011XXXupdateResourceGroupLimiter706925678;
+PersistentTopic1101090806XXXinitialize0 -> PersistentTopic1101090806XXXonUpdate1780265855;
+PersistentTopic1101090806XXXonPoliciesUpdate611538288 -> AbstractTopic1718290011XXXupdatePublishDispatcher0;
+PersistentTopic1101090806XXXonPoliciesUpdate611538288 -> AbstractTopic1718290011XXXupdateResourceGroupLimiter706925678;
+PersistentTopic1101090806XXXonUpdate1780265855 -> AbstractTopic1718290011XXXupdatePublishDispatcher0;
+PulsarService724302956XXXstart0 -> BrokerService1718290011XXXstart0;
+SystemTopicBasedTopicPoliciesService1718290011XXXaddOwnedNamespaceBundleAsync4359779 -> PersistentTopic1101090806XXXonUpdate1780265855;
+SystemTopicBasedTopicPoliciesService1718290011XXXgetTopicPolicies896766266 -> PersistentTopic1101090806XXXonUpdate1780265855;
+    
+}
+@enduml

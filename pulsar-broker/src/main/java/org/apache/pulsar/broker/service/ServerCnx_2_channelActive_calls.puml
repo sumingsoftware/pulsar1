@@ -1,0 +1,317 @@
+@startuml
+
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "org.apache.pulsar.broker.service.ServerCnx#channelActive(ChannelHandlerContext)",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
+    "showPackageLevels": 2,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "org.apache.pulsar.broker.service.ServerCnx",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1411517106 { 
+   	label=apache
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_523310109 { 
+   	label=pulsar
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   subgraph cluster_1046280548 { 
+   	label=ClientCnx
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ClientCnx12001400XXXchannelActive604153544[
+	label="+ channelActive()"
+	style=filled
+	fillcolor=white
+	tooltip="ClientCnx
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1263077722 { 
+   	label=DefaultConnectionController
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   DefaultConnectionController1434559213XXXincreaseConnection159223009[
+	label="+ increaseConnection()"
+	style=filled
+	fillcolor=white
+	tooltip="DefaultConnectionController
+
+&#10;  Increase the number of connections counter.&#10;  @param remoteAddress&#10;  @return&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1800310143 { 
+   	label=AuthenticationSasl
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   AuthenticationSasl1053578162XXXgetAuthData1808118735[
+	label="+ getAuthData()"
+	style=filled
+	fillcolor=white
+	tooltip="AuthenticationSasl
+
+&#10;  Get/Create an authentication data provider which provides the data that this client will be sent to the broker.&#10;  Some authentication method need to auth between each client channel. So it need the broker, who it will talk to.&#10; &#10;  @param brokerHostName&#10;  target broker host name&#10; &#10;  @return The authentication data provider&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1850132746 { 
+   	label=Commands
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Commands1070348832XXXnewConnect1281771458[
+	label="+ newConnect()"
+	style=filled
+	fillcolor=white
+	tooltip="Commands
+
+null"
+	fontcolor=darkgreen
+];
+
+Commands1070348832XXXnewError1409089306[
+	label="+ newError()"
+	style=filled
+	fillcolor=white
+	tooltip="Commands
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1859364881 { 
+   	label=PulsarStats
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PulsarStats1718290011XXXrecordConnectionCreate0[
+	label="+ recordConnectionCreate()"
+	style=filled
+	fillcolor=white
+	tooltip="PulsarStats
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1864234657 { 
+   	label=PulsarHandler
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PulsarHandler1070348832XXXchannelActive604153544[
+	label="+ channelActive()"
+	style=filled
+	fillcolor=white
+	tooltip="PulsarHandler
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_2019091922 { 
+   	label=AuthData
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   AuthData1605686738XXXof1374008726[
+	label="+ of()"
+	style=filled
+	fillcolor=white
+	tooltip="AuthData
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_227946854 { 
+   	label=SaslAuthenticationDataProvider
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   SaslAuthenticationDataProvider1053578162XXXauthenticate1496420754[
+	label="+ authenticate()"
+	style=filled
+	fillcolor=white
+	tooltip="SaslAuthenticationDataProvider
+
+&#10;  For mutual authentication, This method use passed in `data` to evaluate and challenge,&#10;  then returns null if authentication has completed;&#10;  returns authenticated data back to server side, if authentication has not completed.&#10; &#10;  \<p\>Mainly used for mutual authentication like sasl.&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_791149362 { 
+   	label=Runnables
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Runnables1762718902XXXcatchingAndLoggingThrowables894056253[
+	label="+ catchingAndLoggingThrowables()"
+	style=filled
+	fillcolor=white
+	tooltip="Runnables
+
+&#10;  Wraps a Runnable so that throwables are caught and logged when a Runnable is run.&#10; &#10;  The main usecase for this method is to be used in&#10;  {@link java.util.concurrent.ScheduledExecutorService#scheduleAtFixedRate(Runnable, long, long, TimeUnit)}&#10;  calls to ensure that the scheduled task doesn't get cancelled as a result of an uncaught exception.&#10; &#10;  @param runnable The runnable to wrap&#10;  @return a wrapped Runnable&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_923169591 { 
+   	label=ServerCnx
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ServerCnx1718290011XXXchannelActive604153544[
+	label="+ channelActive()"
+	style=filled
+	fillcolor=white
+	tooltip="ServerCnx
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_961973220 { 
+   	label=ProxyConnection
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ProxyConnection79518146XXXchannelActive604153544[
+	label="+ channelActive()"
+	style=filled
+	fillcolor=white
+	tooltip="ProxyConnection
+
+null"
+	fontcolor=darkgreen
+];
+} 
+} 
+} 
+
+'edges    
+ClientCnx12001400XXXchannelActive604153544 -> AuthData1605686738XXXof1374008726;
+ClientCnx12001400XXXchannelActive604153544 -> AuthenticationSasl1053578162XXXgetAuthData1808118735;
+ClientCnx12001400XXXchannelActive604153544 -> Commands1070348832XXXnewConnect1281771458;
+ClientCnx12001400XXXchannelActive604153544 -> PulsarHandler1070348832XXXchannelActive604153544;
+ClientCnx12001400XXXchannelActive604153544 -> Runnables1762718902XXXcatchingAndLoggingThrowables894056253;
+ClientCnx12001400XXXchannelActive604153544 -> SaslAuthenticationDataProvider1053578162XXXauthenticate1496420754;
+ProxyConnection79518146XXXchannelActive604153544 -> PulsarHandler1070348832XXXchannelActive604153544;
+PulsarHandler1070348832XXXchannelActive604153544 -> ClientCnx12001400XXXchannelActive604153544;
+PulsarHandler1070348832XXXchannelActive604153544 -> ProxyConnection79518146XXXchannelActive604153544;
+PulsarHandler1070348832XXXchannelActive604153544 -> Runnables1762718902XXXcatchingAndLoggingThrowables894056253;
+PulsarHandler1070348832XXXchannelActive604153544 -> ServerCnx1718290011XXXchannelActive604153544;
+ServerCnx1718290011XXXchannelActive604153544 -> Commands1070348832XXXnewError1409089306;
+ServerCnx1718290011XXXchannelActive604153544 -> DefaultConnectionController1434559213XXXincreaseConnection159223009;
+ServerCnx1718290011XXXchannelActive604153544 -> PulsarHandler1070348832XXXchannelActive604153544;
+ServerCnx1718290011XXXchannelActive604153544 -> PulsarStats1718290011XXXrecordConnectionCreate0;
+    
+}
+@enduml

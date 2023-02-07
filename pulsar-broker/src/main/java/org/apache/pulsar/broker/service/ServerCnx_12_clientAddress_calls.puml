@@ -1,0 +1,424 @@
+@startuml
+
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "org.apache.pulsar.broker.service.ServerCnx#clientAddress()",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
+    "showPackageLevels": 2,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "org.apache.pulsar.broker.service.ServerCnx",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1411517106 { 
+   	label=apache
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_523310109 { 
+   	label=pulsar
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   subgraph cluster_1014604199 { 
+   	label=PulsarDecoder
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PulsarDecoder1070348832XXXchannelRead995363995[
+	label="+ channelRead()"
+	style=filled
+	fillcolor=white
+	tooltip="PulsarDecoder
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1348467880 { 
+   	label=NonPersistentTopic
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   NonPersistentTopic442146095XXXpublishMessage991694241[
+	label="+ publishMessage()"
+	style=filled
+	fillcolor=white
+	tooltip="NonPersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1388282347 { 
+   	label=ProxyBackendHandler
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ProxyBackendHandler828483243XXXchannelRead995363995[
+	label="+ channelRead()"
+	style=filled
+	fillcolor=white
+	tooltip="ProxyBackendHandler
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1660348955 { 
+   	label=Producer
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Producer1718290011XXXpublishMessage1309573701[
+	label="+ publishMessage()"
+	style=filled
+	fillcolor=white
+	tooltip="Producer
+
+null"
+	fontcolor=darkgreen
+];
+
+Producer1718290011XXXpublishMessage1717589301[
+	label="+ publishMessage()"
+	style=filled
+	fillcolor=white
+	tooltip="Producer
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1975659038 { 
+   	label=MessagePublishContext
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   MessagePublishContext1660348955XXXcompleted1453117839[
+	label="+ completed()"
+	style=filled
+	fillcolor=white
+	tooltip="MessagePublishContext
+
+&#10;  Executed from managed ledger thread when the message is persisted.&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_2016466244 { 
+   	label=Topics
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Topics763407854XXXproduceOnNonPersistentTopic514140058[
+	label="+ produceOnNonPersistentTopic()"
+	style=filled
+	fillcolor=white
+	tooltip="Topics
+
+null"
+	fontcolor=darkgreen
+];
+
+Topics763407854XXXproduceOnNonPersistentTopicPartition957727127[
+	label="+ produceOnNonPersistentTopicPartition()"
+	style=filled
+	fillcolor=white
+	tooltip="Topics
+
+null"
+	fontcolor=darkgreen
+];
+
+Topics763407854XXXproduceOnPersistentTopic514140058[
+	label="+ produceOnPersistentTopic()"
+	style=filled
+	fillcolor=white
+	tooltip="Topics
+
+null"
+	fontcolor=darkgreen
+];
+
+Topics763407854XXXproduceOnPersistentTopicPartition957727127[
+	label="+ produceOnPersistentTopicPartition()"
+	style=filled
+	fillcolor=white
+	tooltip="Topics
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_359057108 { 
+   	label=PersistentTopic
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PersistentTopic1101090806XXXaddComplete1491430175[
+	label="+ addComplete()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXaddFailed715383354[
+	label="+ addFailed()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXpublishMessage991694241[
+	label="+ publishMessage()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXpublishTxnMessage483951322[
+	label="+ publishTxnMessage()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+&#10;  Publish Transaction message to this Topic's TransactionBuffer.&#10; &#10;  @param txnID Transaction Id&#10;  @param headersAndPayload Message data&#10;  @param publishContextPublish context&#10; "
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXsubscribe2062160637[
+	label="+ subscribe()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+null"
+	fontcolor=darkgreen
+];
+
+PersistentTopic1101090806XXXsubscribe8945646[
+	label="+ subscribe()"
+	style=filled
+	fillcolor=white
+	tooltip="PersistentTopic
+
+&#10;  Subscribe a topic.&#10;  @param option&#10;  @return&#10; "
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_822724435 { 
+   	label=ReplicatedSubscriptionsController
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ReplicatedSubscriptionsController1101090806XXXlocalSubscriptionUpdated723369190[
+	label="+ localSubscriptionUpdated()"
+	style=filled
+	fillcolor=white
+	tooltip="ReplicatedSubscriptionsController
+
+null"
+	fontcolor=darkgreen
+];
+
+ReplicatedSubscriptionsController1101090806XXXreceivedReplicatedSubscriptionMarker516434395[
+	label="+ receivedReplicatedSubscriptionMarker()"
+	style=filled
+	fillcolor=white
+	tooltip="ReplicatedSubscriptionsController
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_923169591 { 
+   	label=ServerCnx
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ServerCnx1718290011XXXclientAddress0[
+	label="+ clientAddress()"
+	style=filled
+	fillcolor=white
+	tooltip="ServerCnx
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+} 
+} 
+
+subgraph cluster_91979707 { 
+   	label=bookkeeper
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   subgraph cluster_569476203 { 
+   	label=OpAddEntry
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   OpAddEntry997059435XXXcloseComplete394845177[
+	label="+ closeComplete()"
+	style=filled
+	fillcolor=white
+	tooltip="OpAddEntry
+
+null"
+	fontcolor=darkgreen
+];
+
+OpAddEntry997059435XXXfailed469076839[
+	label="+ failed()"
+	style=filled
+	fillcolor=white
+	tooltip="OpAddEntry
+
+null"
+	fontcolor=darkgreen
+];
+
+OpAddEntry997059435XXXsafeRun0[
+	label="+ safeRun()"
+	style=filled
+	fillcolor=white
+	tooltip="OpAddEntry
+
+null"
+	fontcolor=darkgreen
+];
+} 
+} 
+} 
+
+'edges    
+MessagePublishContext1660348955XXXcompleted1453117839 -> ServerCnx1718290011XXXclientAddress0;
+NonPersistentTopic442146095XXXpublishMessage991694241 -> MessagePublishContext1660348955XXXcompleted1453117839;
+OpAddEntry997059435XXXcloseComplete394845177 -> PersistentTopic1101090806XXXaddComplete1491430175;
+OpAddEntry997059435XXXfailed469076839 -> PersistentTopic1101090806XXXaddFailed715383354;
+OpAddEntry997059435XXXsafeRun0 -> PersistentTopic1101090806XXXaddComplete1491430175;
+PersistentTopic1101090806XXXaddComplete1491430175 -> MessagePublishContext1660348955XXXcompleted1453117839;
+PersistentTopic1101090806XXXaddFailed715383354 -> MessagePublishContext1660348955XXXcompleted1453117839;
+PersistentTopic1101090806XXXpublishMessage991694241 -> MessagePublishContext1660348955XXXcompleted1453117839;
+PersistentTopic1101090806XXXpublishTxnMessage483951322 -> MessagePublishContext1660348955XXXcompleted1453117839;
+PersistentTopic1101090806XXXpublishTxnMessage483951322 -> PersistentTopic1101090806XXXaddFailed715383354;
+PersistentTopic1101090806XXXsubscribe2062160637 -> ServerCnx1718290011XXXclientAddress0;
+PersistentTopic1101090806XXXsubscribe8945646 -> ServerCnx1718290011XXXclientAddress0;
+Producer1718290011XXXpublishMessage1309573701 -> NonPersistentTopic442146095XXXpublishMessage991694241;
+Producer1718290011XXXpublishMessage1717589301 -> NonPersistentTopic442146095XXXpublishMessage991694241;
+ProxyBackendHandler828483243XXXchannelRead995363995 -> PulsarDecoder1070348832XXXchannelRead995363995;
+PulsarDecoder1070348832XXXchannelRead995363995 -> PersistentTopic1101090806XXXsubscribe8945646;
+ReplicatedSubscriptionsController1101090806XXXlocalSubscriptionUpdated723369190 -> PersistentTopic1101090806XXXpublishMessage991694241;
+ReplicatedSubscriptionsController1101090806XXXreceivedReplicatedSubscriptionMarker516434395 -> PersistentTopic1101090806XXXpublishMessage991694241;
+Topics763407854XXXproduceOnNonPersistentTopic514140058 -> NonPersistentTopic442146095XXXpublishMessage991694241;
+Topics763407854XXXproduceOnNonPersistentTopicPartition957727127 -> NonPersistentTopic442146095XXXpublishMessage991694241;
+Topics763407854XXXproduceOnPersistentTopic514140058 -> NonPersistentTopic442146095XXXpublishMessage991694241;
+Topics763407854XXXproduceOnPersistentTopicPartition957727127 -> NonPersistentTopic442146095XXXpublishMessage991694241;
+    
+}
+@enduml

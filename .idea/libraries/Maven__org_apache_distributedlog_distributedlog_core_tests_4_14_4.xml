@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.distributedlog:distributedlog-core:tests:4.14.4">
+    <CLASSES>
+      <root url="jar://G:/mvnrepository/org/apache/distributedlog/distributedlog-core/4.14.4/distributedlog-core-4.14.4-tests.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://G:/mvnrepository/org/apache/distributedlog/distributedlog-core/4.14.4/distributedlog-core-4.14.4-test-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://G:/mvnrepository/org/apache/distributedlog/distributedlog-core/4.14.4/distributedlog-core-4.14.4-test-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
